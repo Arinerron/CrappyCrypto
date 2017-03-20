@@ -1,6 +1,4 @@
 import java.util.*;
-import java.math.BigInteger;
-import javax.xml.bind.DatatypeConverter;
 
 public class Main {
     public static void main(String[] args) {
@@ -166,7 +164,7 @@ public class Main {
         return new String(hexChars);
     }
 
-    private static byte[] hexToBytes(String encoded) {System.out.println(encoded.length());
+    private static byte[] hexToBytes(String encoded) {
         if ((encoded.length() % 2) != 0)
         encoded += "0";
 
