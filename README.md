@@ -12,3 +12,5 @@ Decrypt:
 
 # Disclaimer
 It should be obvious by now: **do NOT not use this for "encrypting" anything you actually care about being private.** This is for fun only.
+
+But I suppose, security through obscurity?
