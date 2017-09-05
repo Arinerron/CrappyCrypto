@@ -1,6 +1,8 @@
 import java.util.*;
 
 public class Main {
+    public static int key = 3301;
+    
     public static void main(String[] args) {
         if(args.length != 0) {
             if(args[0].equalsIgnoreCase("-e") || args[0].equalsIgnoreCase("--encrypt")) {
@@ -57,7 +59,7 @@ public class Main {
                 byte next = bytes[i + 1];
 
                 // subtract next byte from the current
-                byte subtract = (byte)(b - next);
+                byte subtract = (byte)(b - (next * key));
 
                 // set byte to subtracted byte
                 bytes[i] = subtract;
@@ -74,8 +76,8 @@ public class Main {
              if(i != 0 && flip) {
                 byte next = bytes[i - 1];
 
-                // subtract next byte from the current
-                byte subtract = (byte)(b - next);
+                // subtract next byte from the current 1 3 5 8 9 - > -5 -7 -9 -11 9    y = x - 2z , z = (y - x) / 2
+                byte subtract = (byte)(b - (next * key));
 
                 // set byte to subtracted byte
                 bytes[i] = subtract;
@@ -101,7 +103,7 @@ public class Main {
                byte next = bytes[i - 1];
 
                // subtract next byte from the current
-               byte subtract = (byte)(b + next);
+               byte subtract = (byte)(b + (next * key));
 
                // set byte to subtracted byte
                bytes[i] = subtract;
@@ -119,7 +121,7 @@ public class Main {
                byte next = bytes[i + 1];
 
                // subtract next byte from the current
-               byte subtract = (byte)(b + next);
+               byte subtract = (byte)(b + (next * key));
 
                // set byte to subtracted byte
                bytes[i] = subtract;
